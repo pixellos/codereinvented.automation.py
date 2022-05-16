@@ -49,6 +49,7 @@ To get continious stream of json files run
 Application is scraping excel, building meta-table with addresses and descriptions, then it bucket it to not read more than 50 bytes from modbus at once, later on files are available for further processing
 
 # TODO
+- package it into pip package
 - pvmonitor
 - mqtt
 
