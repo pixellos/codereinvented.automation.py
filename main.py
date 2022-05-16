@@ -41,7 +41,7 @@ if __name__ == "__main__":
         result = requestForBuckets(buckets, client, verbose)
 
         if pvMonitorLogin and pvMonitorPassword and pvMonitorNumber:
-            send("17522", "5tZ41WKQ7bkp", int(pvMonitorNumber), result)
+            send(pvMonitorLogin, pvMonitorPassword, int(pvMonitorNumber), result)
 
         responseJsonHelper = JsonHelper[ReadItem](
             f'results/resp-{time.strftime("%Y%m%d-%H%M%S")}.json'
