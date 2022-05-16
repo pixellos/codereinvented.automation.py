@@ -32,7 +32,7 @@ if __name__ == "__main__":
         slave_id=inverterSlaveId,
         verbose=verbose,
     )
-    
+
     def execute():
         entries = (
             dumpToCache() if not jsonHelper.cacheExists() else jsonHelper.readFromFile()
@@ -47,7 +47,6 @@ if __name__ == "__main__":
             f'results/resp-{time.strftime("%Y%m%d-%H%M%S")}.json'
         )
         responseJsonHelper.dumpJson(result)
-
 
     while True:
         execute()

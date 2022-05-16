@@ -1,4 +1,3 @@
-
 import time
 from typing import TypedDict
 import requests
@@ -12,32 +11,35 @@ class Entry(TypedDict):
     description: str
     unit: str
 
+
 class Mapping(TypedDict):
     pvMonitorId: int
     section: str
     fieldId: str
 
+
 idMapsHelper = JsonHelper[Entry]("pvmonitor_sender/idmap.json")
 sofarMapHelper = JsonHelper[Mapping]("pvmonitor_sender/sofar_hyd_g9_map.json")
 
-pvMonitorMaps = idMapsHelper.readFromFile()
-sofarMap = sofarMapHelper.readFromFile()
-
 
 def send(ild: str, password: str, inverterId: int, items: list[ReadItem]):
-    query = ''
-    idsToReadItems = dict(zip(map(lambda x: (x['section'], x['field']), items), items));
+    sofarMap = sofarMapHelper.readFromFile()
+
+    query = ""
+    idsToReadItems = dict(zip(map(lambda x: (x["section"], x["field"]), items), items))
 
     for x in sofarMap:
-        item = idsToReadItems[(x['section'], x['fieldId'])]
-        query += f'&F{x["pvMonitorId"]}.{inverterId}={item["response"]}'
-
+        try:
+            item = idsToReadItems[(x["section"], x["fieldId"])]
+            query += f'&F{x["pvMonitorId"]}.{inverterId}={item["response"]}'
+        except: 
+            None
+            
     r = requests.get(
-        f'http://dane.pvmonitor.pl/pv/get2.php' + 
-        f'?idl={ild}' + 
-        f'&p={password}' + 
-        f'&tm={time.strftime("%Y-%m-%dT%H:%M:%S")}'  + 
-        query
+        f"http://dane.pvmonitor.pl/pv/get2.php"
+        + f"?idl={ild}"
+        + f"&p={password}"
+        + f'&tm={time.strftime("%Y-%m-%dT%H:%M:%S")}'
+        + query
     )
     r.raise_for_status()
-

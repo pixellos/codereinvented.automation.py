@@ -1,7 +1,5 @@
-
 import time
 from typing import TypedDict
-from common.json import JsonHelper
 from inverterreader.bucketer import Bucket
 from pysolarmanv5 import pysolarmanv5
 
@@ -12,10 +10,13 @@ class ReadItem(TypedDict):
     response: str
     unit: str
 
-def requestForBuckets(buckets: list[Bucket], client: pysolarmanv5.PySolarmanV5, verbose = 0):
+
+def requestForBuckets(
+    buckets: list[Bucket], client: pysolarmanv5.PySolarmanV5, verbose=0
+):
     result: list[ReadItem] = []
     for bucket in buckets:
-        time.sleep(0.2)
+        time.sleep(0.5)
         try:
             items = client.read_holding_registers(
                 bucket["startAddress"], bucket["length"]

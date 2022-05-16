@@ -3,12 +3,14 @@ from typing import TypedDict
 from xlsxparser.sofar_modbus_protocol import Identifier
 from pysolarmanv5 import pysolarmanv5
 
+
 class Bucket(TypedDict):
     startAddress: int
     length: int
     items: list[Identifier]
 
-def bucket(xs: list[Identifier]):
+
+def bucket(xs: list[Identifier], size: int):
     if not any(xs):
         return []
 
@@ -19,9 +21,9 @@ def bucket(xs: list[Identifier]):
         first = current[0]
         if any(xs):
             element = xs[-1]
-            if element["address"] - first["address"] < 50: 
+            if element["address"] - first["address"] < size:
                 element = xs.pop()
-                while (element["address"] - first["address"]) < 50 and any(xs):
+                while (element["address"] - first["address"]) < size and any(xs):
                     current.append(element)
                     if any(xs):
                         element = xs.pop()
@@ -35,11 +37,12 @@ def bucket(xs: list[Identifier]):
         )
     return result
 
+
 def addressPresent(x: Identifier) -> bool:
     return x["address"] is not None
 
+
 def bucketIdentifiers(entries: list[Identifier]):
     result = list(filter(addressPresent, entries))
-    result .reverse()
-    return bucket(result)
-
+    result.reverse()
+    return bucket(result, 60)
