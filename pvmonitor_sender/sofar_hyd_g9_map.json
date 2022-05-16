@@ -1,0 +1,51 @@
+[
+    {
+        "pvMonitorId": 535,
+        "section": "On-Grid",
+        "fieldId": "Frequency_Grid"
+    },
+    {
+        "pvMonitorId": 109,
+        "section": "On-Grid",
+        "fieldId": "ActivePower_Output_Total"
+    },
+    {
+        "pvMonitorId": 550,
+        "section": "Battery",
+        "fieldId": "SOC_Bat1"
+    },
+    {
+        "pvMonitorId": 558,
+        "section": "Battery",
+        "fieldId": "ChargeCycle_Bat1"
+    },
+    {
+        "pvMonitorId": 556,
+        "section": "Battery",
+        "fieldId": "Power_Bat1"
+    },
+    {
+        "pvMonitorId": 559,
+        "section": "Battery",
+        "fieldId": "Temperature_Env_Bat1"
+    },
+    {
+        "pvMonitorId": 2,
+        "section": "PV",
+        "fieldId": "Voltage_PV1"
+    },
+    {
+        "pvMonitorId": 3,
+        "section": "PV",
+        "fieldId": "Current_PV1"
+    }, {
+        "pvMonitorId": 5,
+        "section": "PV",
+        "fieldId": "Voltage_PV2"
+    },
+    {
+        "pvMonitorId": 6,
+        "section": "PV",
+        "fieldId": "Current_PV2"
+    }
+]

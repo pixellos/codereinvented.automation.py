@@ -11,6 +11,11 @@ Some envs are required:
 -  "logger__serial"
 -  "inverter__slaveid"
 -  "verbose"
+
+Optional:
+- "pvmonitor__login"
+- "pvmonitor__password"
+- "pvmonitor__lp"
 > PowerShell
 
 

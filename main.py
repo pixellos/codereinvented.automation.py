@@ -1,75 +1,54 @@
 import time
 from typing import TypedDict
+from time import sleep
 from pysolarmanv5 import pysolarmanv5
-import requests
-from inverterreader.bucketer import bucketIdentifiers
+from common.json import JsonHelper
+from inverterreader.bucketer import Bucket, bucketIdentifiers
+from inverterreader.inverter_reader import ReadItem, requestForBuckets
+from pvmonitor_sender.main import send
 from xlsxparser.sofar_modbus_protocol import (
-    Identifier,
-    cacheExists,
-    dump,
-    dumpJson,
+    jsonHelper,
     dumpToCache,
-    readFromFile,
 )
 import os
 
-modbusFileCache = "cache/sofar_hyd_3ph_g3.json"
-entries = dumpToCache(modbusFileCache) if not cacheExists(modbusFileCache) else readFromFile(modbusFileCache)
-buckets = bucketIdentifiers(entries)
 
-loggerIp = os.environ["logger__ip"]
-loggerPort = int(os.environ["logger__port"])
-loggerSerial = int(os.environ["logger__serial"])
-inverterSlaveId = int(os.environ["inverter__slaveid"])
-verbose = int(os.environ["verbose"])
+if __name__ == "__main__":
+    loggerIp = os.environ["logger__ip"]
+    loggerPort = int(os.environ["logger__port"])
+    loggerSerial = int(os.environ["logger__serial"])
+    inverterSlaveId = int(os.environ["inverter__slaveid"])
 
-client = pysolarmanv5.PySolarmanV5(
-    address=loggerIp,
-    serial=loggerSerial,
-    port=loggerPort,
-    slave_id=inverterSlaveId,
-    verbose=verbose,
-)
+    pvMonitorLogin = os.environ.get("pvmonitor__login", None)
+    pvMonitorPassword = os.environ.get("pvmonitor__password", None)
+    pvMonitorNumber = os.environ.get("pvmonitor__lp", None)
 
-class ReadItem(TypedDict):
-    section: str
-    field: str
-    response: str
-    unit: str
+    verbose = int(os.environ["verbose"])
+
+    client = pysolarmanv5.PySolarmanV5(
+        address=loggerIp,
+        serial=loggerSerial,
+        port=loggerPort,
+        slave_id=inverterSlaveId,
+        verbose=verbose,
+    )
+    
+    def execute():
+        entries = (
+            dumpToCache() if not jsonHelper.cacheExists() else jsonHelper.readFromFile()
+        )
+        buckets = bucketIdentifiers(entries)
+        result = requestForBuckets(buckets, client, verbose)
+
+        if pvMonitorLogin and pvMonitorPassword and pvMonitorNumber:
+            send("17522", "5tZ41WKQ7bkp", int(pvMonitorNumber), result)
+
+        responseJsonHelper = JsonHelper[ReadItem](
+            f'results/resp-{time.strftime("%Y%m%d-%H%M%S")}.json'
+        )
+        responseJsonHelper.dumpJson(result)
 
 
-result: list[ReadItem] = []
-
-
-while True:
-    for bucket in buckets:
-        time.sleep(0.2)
-        try:
-            items = client.read_holding_registers(
-                bucket["startAddress"], bucket["length"]
-            )
-            for data in bucket["items"]:
-                position = data["address"] - bucket["startAddress"]
-                isSigned = 1 if data["type"] and data["type"][0] == "I" else 0
-                length = int(int(data["type"][1:]) / 16)
-                scale = 1 if data["accuracy"] is None else data["accuracy"]
-                response = client._format_response(
-                    items[position : position + length], signed=isSigned, scale=scale
-                )
-                result.append(
-                    {
-                        "field": data["field"],
-                        "response": response,
-                        "section": data["section"],
-                        "unit": data["unit"],
-                    }
-                )
-                print(
-                    f'{data["section"]} {data["field"]} {response} {data["unit"]} ',
-                    flush=True,
-                )
-        except:
-            None
-
-    dumpJson(result, f'results/resp-{time.strftime("%Y%m%d-%H%M%S")}.json')
-    time.sleep(20)
+    while True:
+        execute()
+        sleep(5)

@@ -1,5 +1,7 @@
+import time
 from typing import TypedDict
 from xlsxparser.sofar_modbus_protocol import Identifier
+from pysolarmanv5 import pysolarmanv5
 
 class Bucket(TypedDict):
     startAddress: int
@@ -40,3 +42,4 @@ def bucketIdentifiers(entries: list[Identifier]):
     result = list(filter(addressPresent, entries))
     result .reverse()
     return bucket(result)
+

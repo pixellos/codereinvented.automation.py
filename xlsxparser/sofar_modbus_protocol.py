@@ -1,12 +1,11 @@
 from fileinput import filename
-from genericpath import exists
-from textwrap import indent
-from json import load,  dump
 from typing import TypedDict
 import openpyxl
 from pathlib import Path
 
-defaultFileName = "data.json"
+from common.json import JsonHelper
+
+defaultFileName = "cache/hyd3ph_g9_2021.json"
 
 class Identifier(TypedDict):
     section: str
@@ -18,6 +17,8 @@ class Identifier(TypedDict):
     description: str
     mask: str
     mask2: str
+
+jsonHelper = JsonHelper[Identifier](defaultFileName)
 
 def readFromXlsx(startRow: int, endRow: int, sectionName: str):
     file = Path("SOFAR HYD-3PH and SOFAR -G3 Modbus Protocol 2021-10-14_Client.xlsx")
@@ -40,14 +41,8 @@ def readFromXlsx(startRow: int, endRow: int, sectionName: str):
         )
     return result
 
-def readFromFile(fileName:str = defaultFileName)-> list[Identifier]:
-    with open(fileName, "r") as f:
-        return load(f)
 
-def cacheExists(fileName: str = defaultFileName):
-    return exists(fileName)
-
-def dumpToCache(fileName: str = defaultFileName): 
+def dumpToCache(): 
     result = (
         readFromXlsx(135, 205, "On-Grid")
         + readFromXlsx(207, 272, "Off-Grid")
@@ -60,10 +55,6 @@ def dumpToCache(fileName: str = defaultFileName):
         return x["field"] is not None and x['type'] is not None
 
     data = list(filter(onlyWithField, result))
-    dumpJson(data, fileName); 
+    jsonHelper.dumpJson(data); 
     return result
-
-def dumpJson(data: any, fileName: str):
-    with open(fileName, "w") as f:
-        dump(data, f, ensure_ascii=False, indent=2)
 

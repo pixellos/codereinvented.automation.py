@@ -1,0 +1,817 @@
+[
+    {
+        "id": "ID pomiaru",
+        "description": "Opis",
+        "unit": "Jednostka"
+    },
+    {
+        "id": "2",
+        "description": "Napięcie string 1",
+        "unit": "V"
+    },
+    {
+        "id": "3",
+        "description": "Natężenie prądu string 1",
+        "unit": "A"
+    },
+    {
+        "id": "5",
+        "description": "Napięcie string 2",
+        "unit": "V"
+    },
+    {
+        "id": "6",
+        "description": "Natężenie prądu string 2",
+        "unit": "A"
+    },
+    {
+        "id": "7",
+        "description": "Napięcie string 3",
+        "unit": "V"
+    },
+    {
+        "id": "8",
+        "description": "Natężenie prądu string 3",
+        "unit": "A"
+    },
+    {
+        "id": "11",
+        "description": "Temperatura zasilania z PC",
+        "unit": "*C"
+    },
+    {
+        "id": "12",
+        "description": "Temperatura powrotu do PC",
+        "unit": "*C"
+    },
+    {
+        "id": "13",
+        "description": "Temp. czynnika po wyjsciu ze skraplacza",
+        "unit": "*C"
+    },
+    {
+        "id": "14",
+        "description": "Temp. gazu po wyjsciu ze sprezarki",
+        "unit": "*C"
+    },
+    {
+        "id": "15",
+        "description": "Temperatura w domu",
+        "unit": "*C"
+    },
+    {
+        "id": "16",
+        "description": "Temperatura na zewnątrz",
+        "unit": "*C"
+    },
+    {
+        "id": "17",
+        "description": "Temperatura zasilania centralnego ogrzewania",
+        "unit": "*C"
+    },
+    {
+        "id": "18",
+        "description": "Temperatura powrotu centralnego ogrzewania",
+        "unit": "*C"
+    },
+    {
+        "id": "19",
+        "description": "Temperatura bufora - dol",
+        "unit": "*C"
+    },
+    {
+        "id": "20",
+        "description": "Temperatura bufora - srodek",
+        "unit": "*C"
+    },
+    {
+        "id": "21",
+        "description": "Temperatura bufora - gora",
+        "unit": "*C"
+    },
+    {
+        "id": "22",
+        "description": "Temperatura CWU",
+        "unit": "*C"
+    },
+    {
+        "id": "23",
+        "description": "Dolne zrodlo - ciepla strona",
+        "unit": "*C"
+    },
+    {
+        "id": "24",
+        "description": "Dolne zrodlo - zimna strona",
+        "unit": "*C"
+    },
+    {
+        "id": "25",
+        "description": "Temperatura kotła centralnego ogrzewania",
+        "unit": "*C"
+    },
+    {
+        "id": "26",
+        "description": "Wilgotność",
+        "unit": "%"
+    },
+    {
+        "id": "27",
+        "description": "Ciśnienie",
+        "unit": "hPa"
+    },
+    {
+        "id": "28",
+        "description": "Temperatura paneli",
+        "unit": "*C"
+    },
+    {
+        "id": "29",
+        "description": "Napiecie gen. wiatrowego",
+        "unit": "V"
+    },
+    {
+        "id": "30",
+        "description": "Sumaryczna moc na przyłączu",
+        "unit": "W"
+    },
+    {
+        "id": "31",
+        "description": "Temperatura lodówki",
+        "unit": "*C"
+    },
+    {
+        "id": "32",
+        "description": "Napięcie akumulatora",
+        "unit": "V"
+    },
+    {
+        "id": "33",
+        "description": "Temperatura dachu",
+        "unit": "*C"
+    },
+    {
+        "id": "34",
+        "description": "Temperatura inwertera",
+        "unit": "*C"
+    },
+    {
+        "id": "35",
+        "description": "Energia pobrana przez lodówkę",
+        "unit": "Wh"
+    },
+    {
+        "id": "36",
+        "description": "COP",
+        "unit": ""
+    },
+    {
+        "id": "37",
+        "description": "Rekuperator - nawiew DO domu",
+        "unit": "*C"
+    },
+    {
+        "id": "39",
+        "description": "Moc grzałki CWU",
+        "unit": "W"
+    },
+    {
+        "id": "40",
+        "description": "Moc na przyłączu ZE",
+        "unit": "W"
+    },
+    {
+        "id": "41",
+        "description": "Sprawność inwertera",
+        "unit": "%"
+    },
+    {
+        "id": "42",
+        "description": "Rekuperator - wywiew Z domu",
+        "unit": "*C"
+    },
+    {
+        "id": "43",
+        "description": "Rekuperator - czerpnia",
+        "unit": "*C"
+    },
+    {
+        "id": "44",
+        "description": "Rekuperator - wyrzutnia",
+        "unit": "*C"
+    },
+    {
+        "id": "45",
+        "description": "Temperatura spalin z kotła CO",
+        "unit": "*C"
+    },
+    {
+        "id": "46",
+        "description": "Ciśnienie",
+        "unit": "Bar"
+    },
+    {
+        "id": "47",
+        "description": "Energia bufora",
+        "unit": "kWh"
+    },
+    {
+        "id": "48",
+        "description": "Temperatura akwarium",
+        "unit": "*C"
+    },
+    {
+        "id": "49",
+        "description": "Temperatura CWU drugi zasobnik",
+        "unit": "*C"
+    },
+    {
+        "id": "50",
+        "description": "Solary - temperatura zasilania",
+        "unit": "*C"
+    },
+    {
+        "id": "51",
+        "description": "Solary - temperatura powrotu",
+        "unit": "*C"
+    },
+    {
+        "id": "52",
+        "description": "Temperatura komponentów",
+        "unit": "*C"
+    },
+    {
+        "id": "53",
+        "description": "Temperatura absorbera",
+        "unit": "*C"
+    },
+    {
+        "id": "54",
+        "description": "Temperatura bufora 2 - dol",
+        "unit": "*C"
+    },
+    {
+        "id": "55",
+        "description": "Temperatura bufora 2 - srodek",
+        "unit": "*C"
+    },
+    {
+        "id": "56",
+        "description": "Temperatura bufora 2 - gora",
+        "unit": "*C"
+    },
+    {
+        "id": "57",
+        "description": "Temperatura CWU - góra",
+        "unit": "*C"
+    },
+    {
+        "id": "58",
+        "description": "Temperatura zasilania podłogówki",
+        "unit": "*C"
+    },
+    {
+        "id": "59",
+        "description": "Temperatura powrotu podłogówki",
+        "unit": "*C"
+    },
+    {
+        "id": "60",
+        "description": "PC - temperatura parowania",
+        "unit": "*C"
+    },
+    {
+        "id": "61",
+        "description": "PC - temperatura przegrzania",
+        "unit": "*C"
+    },
+    {
+        "id": "62",
+        "description": "Temperatura powrotu cyrkulacji",
+        "unit": "*C"
+    },
+    {
+        "id": "63",
+        "description": "Temperatura szklarni",
+        "unit": "*C"
+    },
+    {
+        "id": "64",
+        "description": "Temperatura nadmuchu klimatyzacji",
+        "unit": "*C"
+    },
+    {
+        "id": "65",
+        "description": "Temperatura garażu",
+        "unit": "*C"
+    },
+    {
+        "id": "66",
+        "description": "Temperatura w holu",
+        "unit": "*C"
+    },
+    {
+        "id": "67",
+        "description": "Temperatura w piwnicy",
+        "unit": "*C"
+    },
+    {
+        "id": "70",
+        "description": "Prędkość wiatru",
+        "unit": "m/s"
+    },
+    {
+        "id": "71",
+        "description": "Kierunek wiatru",
+        "unit": "stopnie"
+    },
+    {
+        "id": "72",
+        "description": "Maksymalna prędkość wiatru w porywach",
+        "unit": "m/s"
+    },
+    {
+        "id": "99",
+        "description": "Moc bierna",
+        "unit": "VAr"
+    },
+    {
+        "id": "100",
+        "description": "Produkcja PV",
+        "unit": "Wh"
+    },
+    {
+        "id": "102",
+        "description": "Energia zużyta",
+        "unit": "Wh"
+    },
+    {
+        "id": "104",
+        "description": "PC energia pobrana",
+        "unit": "Wh"
+    },
+    {
+        "id": "106",
+        "description": "Energia eksport",
+        "unit": "Wh"
+    },
+    {
+        "id": "107",
+        "description": "Moc eksport",
+        "unit": "W"
+    },
+    {
+        "id": "108",
+        "description": "Energia wyprodukowana przez wiatrak",
+        "unit": "Wh"
+    },
+    {
+        "id": "109",
+        "description": "Bilans mocy",
+        "unit": "W"
+    },
+    {
+        "id": "110",
+        "description": "Energia EA",
+        "unit": "kWh"
+    },
+    {
+        "id": "112",
+        "description": "Energia EB",
+        "unit": "kWh"
+    },
+    {
+        "id": "114",
+        "description": "Energia EC",
+        "unit": "kWh"
+    },
+    {
+        "id": "116",
+        "description": "Energia import",
+        "unit": "Wh"
+    },
+    {
+        "id": "117",
+        "description": "Moc import",
+        "unit": "W"
+    },
+    {
+        "id": "118",
+        "description": "Energia total",
+        "unit": "Wh"
+    },
+    {
+        "id": "120",
+        "description": "Energia bierna L1",
+        "unit": "varh"
+    },
+    {
+        "id": "122",
+        "description": "Energia bierna L2",
+        "unit": "varh"
+    },
+    {
+        "id": "124",
+        "description": "Energia bierna L3",
+        "unit": "varh"
+    },
+    {
+        "id": "125",
+        "description": "Energia bierna",
+        "unit": "varh"
+    },
+    {
+        "id": "126",
+        "description": "Energia bierna import",
+        "unit": "varh"
+    },
+    {
+        "id": "127",
+        "description": "Energia bierna eksport",
+        "unit": "varh"
+    },
+    {
+        "id": "130",
+        "description": "Autokonsumpcja",
+        "unit": "Wh"
+    },
+    {
+        "id": "132",
+        "description": "Energia ład. akumulatorów",
+        "unit": "Wh"
+    },
+    {
+        "id": "133",
+        "description": "Energia rozład. akumulatorów",
+        "unit": "Wh"
+    },
+    {
+        "id": "136",
+        "description": "Energia EQL+",
+        "unit": "varh"
+    },
+    {
+        "id": "137",
+        "description": "Energia EQC-",
+        "unit": "varh"
+    },
+    {
+        "id": "138",
+        "description": "Energia EQL-",
+        "unit": "varh"
+    },
+    {
+        "id": "139",
+        "description": "Energia EQC+",
+        "unit": "varh"
+    },
+    {
+        "id": "140",
+        "description": "Energia cieplna",
+        "unit": "Wh"
+    },
+    {
+        "id": "150",
+        "description": "Energia pobrana przez EV",
+        "unit": "Wh"
+    },
+    {
+        "id": "152",
+        "description": "Moc pobierana przez EV",
+        "unit": "W"
+    },
+    {
+        "id": "210",
+        "description": "Moc wejsciowa PA",
+        "unit": "kW"
+    },
+    {
+        "id": "211",
+        "description": "Moc wejsciowa PA",
+        "unit": "W"
+    },
+    {
+        "id": "212",
+        "description": "Moc wejsciowa PB",
+        "unit": "kW"
+    },
+    {
+        "id": "213",
+        "description": "Moc wejsciowa PB",
+        "unit": "W"
+    },
+    {
+        "id": "214",
+        "description": "Moc wejsciowa PC",
+        "unit": "kW"
+    },
+    {
+        "id": "215",
+        "description": "Moc wejsciowa PC",
+        "unit": "W"
+    },
+    {
+        "id": "220",
+        "description": "Moc wyjsciowa PA",
+        "unit": "kW"
+    },
+    {
+        "id": "222",
+        "description": "Moc wyjsciowa PB",
+        "unit": "kW"
+    },
+    {
+        "id": "224",
+        "description": "Moc wyjsciowa PC",
+        "unit": "kW"
+    },
+    {
+        "id": "230",
+        "description": "Moc na przyłączu L1",
+        "unit": "W"
+    },
+    {
+        "id": "232",
+        "description": "Moc na przyłączu L2",
+        "unit": "W"
+    },
+    {
+        "id": "234",
+        "description": "Moc na przyłączu L3",
+        "unit": "W"
+    },
+    {
+        "id": "240",
+        "description": "Moc grzewcza",
+        "unit": "W"
+    },
+    {
+        "id": "310",
+        "description": "Napięcie wejsciowe 1- turbina lub 1 string PV",
+        "unit": "V"
+    },
+    {
+        "id": "312",
+        "description": "Napięcie wejsciowe 2 string PV",
+        "unit": "V"
+    },
+    {
+        "id": "314",
+        "description": "Napięcie wejsciowe 3 string PV",
+        "unit": "V"
+    },
+    {
+        "id": "320",
+        "description": "Wartość skuteczna napięcia L1",
+        "unit": "V"
+    },
+    {
+        "id": "322",
+        "description": "Wartość skuteczna napięcia L2",
+        "unit": "V"
+    },
+    {
+        "id": "324",
+        "description": "Wartość skuteczna napięcia L3",
+        "unit": "V"
+    },
+    {
+        "id": "325",
+        "description": "Wartość skuteczna napięcia",
+        "unit": "V"
+    },
+    {
+        "id": "330",
+        "description": "Napięcie na przyłączu L1",
+        "unit": "V"
+    },
+    {
+        "id": "331",
+        "description": "Napięcie w obwodzie obciążenia L1",
+        "unit": "V"
+    },
+    {
+        "id": "332",
+        "description": "Napięcie na przyłączu L2",
+        "unit": "V"
+    },
+    {
+        "id": "333",
+        "description": "Napięcie w obwodzie obciążenia L2",
+        "unit": "V"
+    },
+    {
+        "id": "334",
+        "description": "Napięcie na przyłączu L3",
+        "unit": "V"
+    },
+    {
+        "id": "335",
+        "description": "Napięcie w obwodzie obciążenia L3",
+        "unit": "V"
+    },
+    {
+        "id": "410",
+        "description": "Prąd wejsciowy 1 string PV lub turbina",
+        "unit": "A"
+    },
+    {
+        "id": "412",
+        "description": "Prąd wejsciowy 2 string PV",
+        "unit": "A"
+    },
+    {
+        "id": "414",
+        "description": "Prąd wejsciowy 3 string PV",
+        "unit": "A"
+    },
+    {
+        "id": "420",
+        "description": "Wartość skuteczna prądu L1",
+        "unit": "A"
+    },
+    {
+        "id": "422",
+        "description": "Wartość skuteczna prądu L2",
+        "unit": "A"
+    },
+    {
+        "id": "424",
+        "description": "Wartość skuteczna prądu L3",
+        "unit": "A"
+    },
+    {
+        "id": "425",
+        "description": "Wartość skuteczna prądu",
+        "unit": "A"
+    },
+    {
+        "id": "430",
+        "description": "Prąd na przyłączu L1",
+        "unit": "A"
+    },
+    {
+        "id": "431",
+        "description": "Prąd w obwodzie obciążenia L1",
+        "unit": "A"
+    },
+    {
+        "id": "432",
+        "description": "Prąd na przyłączu L2",
+        "unit": "A"
+    },
+    {
+        "id": "433",
+        "description": "Prąd w obwodzie obciążenia L2",
+        "unit": "A"
+    },
+    {
+        "id": "434",
+        "description": "Prąd na przyłączu L3",
+        "unit": "A"
+    },
+    {
+        "id": "435",
+        "description": "Prąd w obwodzie obciążenia L3",
+        "unit": "A"
+    },
+    {
+        "id": "500",
+        "description": "Obroty generatora  ",
+        "unit": "obr/min"
+    },
+    {
+        "id": "510",
+        "description": "Współczynnik mocy L1",
+        "unit": "cos fi"
+    },
+    {
+        "id": "512",
+        "description": "Współczynnik mocy L2",
+        "unit": "cos fi"
+    },
+    {
+        "id": "514",
+        "description": "Współczynnik mocy L3",
+        "unit": "cos fi"
+    },
+    {
+        "id": "515",
+        "description": "Współczynnik mocy",
+        "unit": "cos fi"
+    },
+    {
+        "id": "520",
+        "description": "Moc bierna L1",
+        "unit": "var"
+    },
+    {
+        "id": "522",
+        "description": "Moc bierna L2",
+        "unit": "var"
+    },
+    {
+        "id": "524",
+        "description": "Moc bierna L3",
+        "unit": "var"
+    },
+    {
+        "id": "525",
+        "description": "Moc bierna",
+        "unit": "var"
+    },
+    {
+        "id": "530",
+        "description": "Częstotliwość L1",
+        "unit": "Hz"
+    },
+    {
+        "id": "532",
+        "description": "Częstotliwość L2",
+        "unit": "Hz"
+    },
+    {
+        "id": "534",
+        "description": "Częstotliwość L3",
+        "unit": "Hz"
+    },
+    {
+        "id": "535",
+        "description": "Częstotliwość",
+        "unit": "Hz"
+    },
+    {
+        "id": "540",
+        "description": "Moc pozorna L1",
+        "unit": "VA"
+    },
+    {
+        "id": "542",
+        "description": "Moc pozorna L2",
+        "unit": "VA"
+    },
+    {
+        "id": "544",
+        "description": "Moc pozorna L3",
+        "unit": "VA"
+    },
+    {
+        "id": "545",
+        "description": "Moc pozorna",
+        "unit": "VA"
+    },
+    {
+        "id": "550",
+        "description": "Stan naładowania akumulatora",
+        "unit": "%"
+    },
+    {
+        "id": "552",
+        "description": "Napięcie akumulatora",
+        "unit": "V"
+    },
+    {
+        "id": "554",
+        "description": "Prąd ładowania akumulatora",
+        "unit": "A"
+    },
+    {
+        "id": "556",
+        "description": "Moc ładowania akumulatora",
+        "unit": "W"
+    },
+    {
+        "id": "558",
+        "description": "Cykle ładowania",
+        "unit": ""
+    },
+    {
+        "id": "559",
+        "description": "Temperatura akumulatora",
+        "unit": "*C"
+    },
+    {
+        "id": "700",
+        "description": "Natężenie oświetlenia",
+        "unit": "lx"
+    },
+    {
+        "id": "702",
+        "description": "Nasłonecznienie",
+        "unit": "W/m2"
+    },
+    {
+        "id": "704",
+        "description": "UV Indeks",
+        "unit": " "
+    },
+    {
+        "id": "810",
+        "description": "Woda",
+        "unit": "dm3"
+    },
+    {
+        "id": "840",
+        "description": "Gaz",
+        "unit": "dm3"
+    }
+]
