@@ -1,1 +1,1 @@
-__name__ = "pixhome"
+__name__ = "codereinvented.automation.py"
