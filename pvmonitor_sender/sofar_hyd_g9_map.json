@@ -97,5 +97,20 @@
         "pvMonitorId": 435,
         "section": "Off-Grid",
         "fieldId": "Current_Load_T"
+    },
+    {
+        "pvMonitorId": 331,
+        "section": "Off-Grid",
+        "fieldId": "Voltage_Output_R"
+    },
+    {
+        "pvMonitorId": 333,
+        "section": "Off-Grid",
+        "fieldId": "Voltage_Output_S"
+    },
+    {
+        "pvMonitorId": 335,
+        "section": "Off-Grid",
+        "fieldId": "Voltage_Output_T"
     }
 ]
