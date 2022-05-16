@@ -1,3 +1,4 @@
+from logging import error
 import time
 from typing import TypedDict
 import requests
@@ -29,12 +30,13 @@ def send(ild: str, password: str, inverterId: int, items: list[ReadItem]):
     idsToReadItems = dict(zip(map(lambda x: (x["section"], x["field"]), items), items))
 
     for x in sofarMap:
+        key = (x["section"], x["fieldId"])
         try:
-            item = idsToReadItems[(x["section"], x["fieldId"])]
+            item = idsToReadItems[key]
             query += f'&F{x["pvMonitorId"]}.{inverterId}={item["response"]}'
-        except: 
-            None
-            
+        except:
+            error("Cannot match entries %s", item)
+
     r = requests.get(
         f"http://dane.pvmonitor.pl/pv/get2.php"
         + f"?idl={ild}"
