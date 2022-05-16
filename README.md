@@ -55,7 +55,8 @@ Application is scraping excel, building meta-table with addresses and descriptio
 
 # TODO
 - package it into pip package
-- pvmonitor
+- better pvmonitor integration
+- read values as soon as possible, upload to pvmonitor each 5 min
 - mqtt
 
 

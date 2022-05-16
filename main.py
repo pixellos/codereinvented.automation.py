@@ -50,4 +50,4 @@ if __name__ == "__main__":
 
     while True:
         execute()
-        sleep(5)
+        sleep(240)

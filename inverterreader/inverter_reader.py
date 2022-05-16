@@ -1,3 +1,4 @@
+from logging import error
 import time
 from typing import TypedDict
 from inverterreader.bucketer import Bucket
@@ -16,8 +17,7 @@ def requestForBuckets(
 ):
     result: list[ReadItem] = []
     for bucket in buckets:
-        time.sleep(0.5)
-        try:
+        def readBucket():
             items = client.read_holding_registers(
                 bucket["startAddress"], bucket["length"]
             )
@@ -42,6 +42,16 @@ def requestForBuckets(
                         f'{data["section"]} {data["field"]} {response} {data["unit"]} ',
                         flush=True,
                     )
-        except:
-            None
+        try:
+            readBucket()
+        except BaseException as err:
+            error("Error during read: %s %s", bucket, err)
+            try: 
+                time.sleep(10)
+                readBucket()
+            except BaseException as err:
+                error("Error during read retry: %s %s", bucket, err)
+
+        time.sleep(4)
+
     return result

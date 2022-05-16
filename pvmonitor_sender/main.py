@@ -35,7 +35,7 @@ def send(ild: str, password: str, inverterId: int, items: list[ReadItem]):
             item = idsToReadItems[key]
             query += f'&F{x["pvMonitorId"]}.{inverterId}={item["response"]}'
         except:
-            error("Cannot match entries %s", item)
+            error("Cannot match entries %s", key)
 
     r = requests.get(
         f"http://dane.pvmonitor.pl/pv/get2.php"

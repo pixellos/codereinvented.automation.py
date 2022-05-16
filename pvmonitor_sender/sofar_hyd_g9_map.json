@@ -47,5 +47,55 @@
         "pvMonitorId": 6,
         "section": "PV",
         "fieldId": "Current_PV2"
+    },
+    {
+        "pvMonitorId": 40,
+        "section": "On-Grid",
+        "fieldId": "ActivePower_PCC_Total"
+    },
+    {
+        "pvMonitorId": 230,
+        "section": "On-Grid",
+        "fieldId": "Voltage_Phase_R"
+    },
+    {
+        "pvMonitorId": 232,
+        "section": "On-Grid",
+        "fieldId": "Voltage_Phase_S"
+    },
+    {
+        "pvMonitorId": 234,
+        "section": "On-Grid",
+        "fieldId": "Voltage_Phase_T"
+    },
+    {
+        "pvMonitorId": 430,
+        "section": "On-Grid",
+        "fieldId": "Current_Output_R"
+    },
+    {
+        "pvMonitorId": 432,
+        "section": "On-Grid",
+        "fieldId": "Current_Output_S"
+    },
+    {
+        "pvMonitorId": 434,
+        "section": "On-Grid",
+        "fieldId": "Current_Output_T"
+    },
+    {
+        "pvMonitorId": 431,
+        "section": "Off-Grid",
+        "fieldId": "Current_Load_R"
+    },
+    {
+        "pvMonitorId": 433,
+        "section": "Off-Grid",
+        "fieldId": "Current_Load_S"
+    },
+    {
+        "pvMonitorId": 435,
+        "section": "Off-Grid",
+        "fieldId": "Current_Load_T"
     }
 ]
