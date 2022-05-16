@@ -58,6 +58,7 @@ Application is scraping excel, building meta-table with addresses and descriptio
 - better pvmonitor integration
 - read values as soon as possible, upload to pvmonitor each 5 min
 - mqtt
+- make use of disabled features information to fetch less data
 
 
 # Thanks
