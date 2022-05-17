@@ -17,9 +17,9 @@ def requestForBuckets(
 ):
     result: list[ReadItem] = []
     for bucket in buckets:
-        def readBucket():
+        def readBucket(offset: int = 0):
             items = client.read_holding_registers(
-                bucket["startAddress"], bucket["length"]
+                bucket["startAddress"], bucket["length"] + offset
             )
             for data in bucket["items"]:
                 position = data["address"] - bucket["startAddress"]
@@ -47,11 +47,11 @@ def requestForBuckets(
         except BaseException as err:
             error("Error during read: %s %s", bucket, err)
             try: 
-                time.sleep(10)
-                readBucket()
+                time.sleep(5)
+                readBucket(1)
             except BaseException as err:
                 error("Error during read retry: %s %s", bucket, err)
 
-        time.sleep(4)
+        time.sleep(2)
 
     return result

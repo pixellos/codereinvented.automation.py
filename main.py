@@ -1,3 +1,4 @@
+import logging
 import time
 from typing import TypedDict
 from time import sleep
@@ -14,6 +15,8 @@ import os
 
 
 if __name__ == "__main__":
+    logging.basicConfig(filename='logger.log', level=logging.DEBUG, 
+                    format='%(asctime)s %(levelname)s %(name)s %(message)s')
     loggerIp = os.environ["logger__ip"]
     loggerPort = int(os.environ["logger__port"])
     loggerSerial = int(os.environ["logger__serial"])
@@ -25,15 +28,15 @@ if __name__ == "__main__":
 
     verbose = int(os.environ["verbose"])
 
-    client = pysolarmanv5.PySolarmanV5(
-        address=loggerIp,
-        serial=loggerSerial,
-        port=loggerPort,
-        slave_id=inverterSlaveId,
-        verbose=verbose,
-    )
 
     def execute():
+        client = pysolarmanv5.PySolarmanV5(
+            address=loggerIp,
+            serial=loggerSerial,
+            port=loggerPort,
+            slave_id=inverterSlaveId,
+            verbose=verbose,
+        )
         entries = (
             dumpToCache() if not jsonHelper.cacheExists() else jsonHelper.readFromFile()
         )
@@ -42,6 +45,7 @@ if __name__ == "__main__":
 
         if pvMonitorLogin and pvMonitorPassword and pvMonitorNumber:
             send(pvMonitorLogin, pvMonitorPassword, int(pvMonitorNumber), result)
+            print(f'sent! {len(result)}')
 
         responseJsonHelper = JsonHelper[ReadItem](
             f'results/resp-{time.strftime("%Y%m%d-%H%M%S")}.json'

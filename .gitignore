@@ -133,3 +133,6 @@ results/resp-**.json
 
 */obj/**
 */bin/**
+
+*.log
+*.log.old

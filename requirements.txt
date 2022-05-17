@@ -1,3 +1,4 @@
 pysolarmanv5
 openpyxl
 orjson
+requests
