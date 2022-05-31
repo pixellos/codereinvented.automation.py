@@ -13,9 +13,19 @@ Some envs are required:
 -  "verbose"
 
 Optional:
+
+#### PVMonitor
+
 - "pvmonitor__login"
 - "pvmonitor__password"
 - "pvmonitor__lp"
+
+#### MQTT
+- "mqtt__address"
+- "mqtt__port"
+- "mqtt__prefix" - prefix for mqtt topic.
+
+
 > PowerShell
 
 
@@ -65,3 +75,11 @@ Application is scraping excel, building meta-table with addresses and descriptio
 - https://github.com/MichaluxPL/Sofar_LSW3
 - https://github.com/jmccrohan/pysolarmanv5
 - https://github.com/AdvancedClimateSystems/uModbus
+
+
+## ChangeLog
+- 0.0.1
+
+Added DockerFile to setup homeassistant quickly
+Added MQTT send
+

@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  frontend:
+    image: homeassistant/home-assistant
+    ports:
+      - "8123:8123"
+    networks:
+      - some-net
+    volumes:
+      - ./docker/homeassistant:/config
+      - ./shared:/shared
+      - ./dev/serial/by-id/:/dev/serial/by-id/
+  broker:
+    extends:
+        file: mosquitto-docker-compose/docker-compose.yaml
+        service: mosquitto
+    networks:
+      - some-net
+networks:
+  some-net:
+    driver: bridge

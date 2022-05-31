@@ -2,3 +2,4 @@ pysolarmanv5
 openpyxl
 orjson
 requests
+paho-mqtt

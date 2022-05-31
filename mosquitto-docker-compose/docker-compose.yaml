@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  mosquitto:
+    hostname: mosquitto
+    image: eclipse-mosquitto
+    volumes:
+      - ./:/mosquitto/:rw
+      - ./storage/mosquitto/config:/mqtt/config:ro
+      - ./storage/mosquitto/data:/mqtt/data
+      - ./storage/mosquitto/log:/mqtt/log
+    ports:
+      - 1883:1883
+      - 9001:9001

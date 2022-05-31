@@ -42,6 +42,7 @@ def requestForBuckets(
                         f'{data["section"]} {data["field"]} {response} {data["unit"]} ',
                         flush=True,
                     )
+
         try:
             readBucket()
         except BaseException as err:
@@ -50,7 +51,7 @@ def requestForBuckets(
                 time.sleep(5)
                 readBucket(1)
             except BaseException as err:
-                error("Error during read retry: %s %s", bucket, err)
+                error("Error during read retry: %s ", err)
 
         time.sleep(2)
 
