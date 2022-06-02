@@ -21,6 +21,6 @@ def send(address: str, port: int, prefix: str, items: list[ReadItem]):
             json_object = json.dumps(dictionary, indent=4)
             client.publish(discoveryPrefix, json_object)
             client.publish(statePrefix, x["response"])
-    except:
-        print("error mqtt");
+    except BaseException as e:
+        print("error mqtt", json.dumps(e));
     client.disconnect()

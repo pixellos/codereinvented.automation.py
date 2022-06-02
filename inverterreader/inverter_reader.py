@@ -48,11 +48,11 @@ def requestForBuckets(
         except BaseException as err:
             error("Error during read: %s %s", bucket, err)
             try: 
-                time.sleep(5)
+                time.sleep(2)
                 readBucket(1)
             except BaseException as err:
                 error("Error during read retry: %s ", err)
 
-        time.sleep(2)
+        time.sleep(1)
 
     return result

@@ -1,7 +1,15 @@
 version: "3.7"
+
+networks:
+  lan_access:
+    driver: bridge
+
 services:
-  app: 
-    network_mode: "host"  
+  app:
+    restart: always
+    networks:
+      - lan_access
+      - default
     environment:
       - verbose=1
       - mqtt__address=mosquitto
@@ -9,6 +17,9 @@ services:
       - mqtt__prefix=homeassistant
     build: .
   frontend:
+    restart: always
+    networks:
+      - lan_access
     image: homeassistant/home-assistant
     ports:
       - "8123:8123"
@@ -18,5 +29,8 @@ services:
       - ./dev/serial/by-id/:/dev/serial/by-id/
   broker:
     extends:
-        file: mosquitto-docker-compose/docker-compose.yaml
-        service: mosquitto
+      file: mosquitto-docker-compose/docker-compose.yaml
+      service: mosquitto
+    restart: always
+    networks:
+      - lan_access

@@ -31,7 +31,7 @@ if __name__ == "__main__":
     pvMonitorNumber = os.environ.get("pvmonitor__lp", None)
 
     mqttAddress = os.environ.get("mqtt__address", "mosquitto")
-    mqttPort = os.environ.get("mqtt__port", 1883)
+    mqttPort = int(os.environ.get("mqtt__port", 1883))
     mqttPrefix = os.environ.get("mqtt__prefix", "homeassistant")
 
     verbose = int(os.environ["verbose"])
@@ -65,5 +65,4 @@ if __name__ == "__main__":
             if pvMonitorLogin and pvMonitorPassword and pvMonitorNumber:
                 send(pvMonitorLogin, pvMonitorPassword, int(pvMonitorNumber), result)
 
-        if mqttAddress and mqttPort and mqttPrefix and result:
-            send_mqtt(mqttAddress, mqttPort, mqttPrefix, result)
+        send_mqtt(mqttAddress, mqttPort, mqttPrefix, result)

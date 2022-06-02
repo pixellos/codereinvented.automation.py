@@ -3,6 +3,12 @@ Home Automation
 
 ## How to run
 
+### Docker
+- Install docker
+- In `docker-compose` `environment` section add missing variables
+- `docker-compose up` 
+- 
+
 ### Sofar Solar HYD
 
 Some envs are required:
