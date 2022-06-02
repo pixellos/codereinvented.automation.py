@@ -1,11 +1,17 @@
 version: "3.7"
 services:
+  app: 
+    network_mode: "host"  
+    environment:
+      - verbose=1
+      - mqtt__address=mosquitto
+      - mqtt__port=1883
+      - mqtt__prefix=homeassistant
+    build: .
   frontend:
     image: homeassistant/home-assistant
     ports:
       - "8123:8123"
-    networks:
-      - some-net
     volumes:
       - ./docker/homeassistant:/config
       - ./shared:/shared
@@ -14,8 +20,3 @@ services:
     extends:
         file: mosquitto-docker-compose/docker-compose.yaml
         service: mosquitto
-    networks:
-      - some-net
-networks:
-  some-net:
-    driver: bridge

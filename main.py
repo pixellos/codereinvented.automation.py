@@ -16,8 +16,11 @@ import os
 
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='logger.log', level=logging.DEBUG, 
-                    format='%(asctime)s %(levelname)s %(name)s %(message)s')
+    logging.basicConfig(
+        filename="logger.log",
+        level=logging.DEBUG,
+        format="%(asctime)s %(levelname)s %(name)s %(message)s",
+    )
     loggerIp = os.environ["logger__ip"]
     loggerPort = int(os.environ["logger__port"])
     loggerSerial = int(os.environ["logger__serial"])
@@ -32,7 +35,6 @@ if __name__ == "__main__":
     mqttPrefix = os.environ.get("mqtt__prefix", "homeassistant")
 
     verbose = int(os.environ["verbose"])
-
 
     def execute():
         client = pysolarmanv5.PySolarmanV5(
@@ -63,4 +65,5 @@ if __name__ == "__main__":
             if pvMonitorLogin and pvMonitorPassword and pvMonitorNumber:
                 send(pvMonitorLogin, pvMonitorPassword, int(pvMonitorNumber), result)
 
-        send_mqtt(mqttAddress, mqttPort, mqttPrefix, result)
+        if mqttAddress and mqttPort and mqttPrefix and result:
+            send_mqtt(mqttAddress, mqttPort, mqttPrefix, result)
