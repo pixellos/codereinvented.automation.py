@@ -12,9 +12,12 @@ def send(address: str, port: int, prefix: str, items: list[ReadItem]):
         for x in items:
             statePrefix = f"{prefix}/sensor/{x['field']}/state"
             dictionary = {
+                "unique_id": x["field"],
+                "entity_id": x["field"],
                 "id": x["field"],
                 "name": x["field"],
                 "device_class": "energy",
+                "unit_of_measurement": '' if x['unit'] is None else x['unit'],
                 "state_topic": statePrefix,
             }
             discoveryPrefix = f"{prefix}/sensor/{x['field']}/config"
